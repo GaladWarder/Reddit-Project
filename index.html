@@ -1,3 +1,11 @@
+<?php
+$banner = array('banner1.png', 'banner2.png', 'banner4.png'); // filenames array
+
+$i = rand(0,count($banner)-1); // generates random number size of the array
+$selectedBanner = "$banner[i]"; // set variable equal to whatever random file was chosen
+
+?>
+
 <!DOCTYPE HTML>
 
 <html>
@@ -75,34 +83,26 @@
 						
 					<!-- Info Section -->
 						<section id="about">
+						
+							<!-- Slice -->
+							<section id="slice">
+								<div class="inner">
+									<h5>The goal of this project is to provide professional art and graphic design to anyone who needs or wants it, entirely for free.</h5>
+							    </div>
+						    </section>
+							
 							<div class="inner">
 								<header>
-									<h1>The Goal</h1>
+									<h1>How It Works</h1>
 								</header>
-								<span class="image left special"><img src="images/pic01.jpg" alt="" /></span>
-								<h3>The goal of this project is to provide professional art and graphic design to anyone who needs or wants it, entirely for free. </h3>
-								<p>I have worked in the art/graphic design industry for around 5 years now, and one common problem I have seen over and over again is the issue of money. How much is an artist's time worth?
-								How do you find a solid artist at an affordable price? And why is my logo going to cost me so much? It's just ink on paper! I've seen so many businesses try to keep costs low, ending up
-								with a sub-par or unworkable branding scheme, freelancers who do the bare minimum required, and good ideas lost or abandoned in the early stages of development, because they don't stand out.
-								<br>
-								<br>
-								The thing is, I don't think either party is to blame. A small business owner who has taken out loans or sunk savings into their passion understandably wants to keep their costs as low as 
-								they can until their business gets on its feet. And artists who have dedicated years of their life to their craft only to have to work tirelessly to keep revenue coming in, can hardly 
-								be blamed for doing only what they have to in order to get to the next job. In all cases, the sticking point is money. Money can prevent great ideas from blossoming, or nurture them into full bloom. 
-								Money is what can either prevent artists from pursuing their dream project, or help them make a lasting mark on society. Most successful partnerships between an artist and client are a result of the 
-								monetary exchange being right for both sides.</p>
-								
-								<h4>So what if we change the rules?</h4>
-								
-								<p>What if the focus shifts from the money exchanged to the relationship and the end result? I believe that if the foremost goal of each party is the other's well-being, everyone can live happily and great things can 
-								come from the partnership. This project is my way of putting my money, (and time, in this case), where my mouth is. A world of people looking out for each other is a great world, and this is my way of moving towards it.</p>
-								<h1>How Does It Work?</h1>
+								<p>At the bottom-right of this page, you will find a button to get in contact with me. </p>
+								<p>more text</p2>
 								<p>^need to shorten/edit back - too verbose. Need to avoid creating a hypothetical conflict while still getting point across. HDIW section needs to be clear, soncise, short. Need FAQ
 								section after it. Need to figure out whether to keep the form or replace it with more streamlined solution - 3rd party site maybe? (think Mailchimp) Need Paypal integration. About section needs to be filled out, 
 								and placeholder images need to be replaced. One small image per section, could skip the middle one potentially if too visually busy.</p>
 								<section class="columns double">
 									<div class="column">
-										<span class="image left special"><img src="images/pic01.jpg" alt="" /></span>
+										<span class="image left special"><img src="images/whytho.png" alt="" /></span>
 										<h2>Why are you doing this?</h2>
 										<p>
 											I started this project as a way to grow as an artist, to support as many communities as possible, and to see if a donation-based business model was viable for an individual.
@@ -111,8 +111,8 @@
 										</p>
 									</div>
 									<div class="column">
-										<span class="image left special"><img src="images/pic02.jpg" alt="" /></span>
-										<h2>What will my donation be used for?</h2>
+										<span class="image left special"><img src="images/donationuse.png" alt="" /></span>
+										<h2>What are the donations used for?</h2>
 										<p>
 											Any donations will be used first and foremost for the upkeep of this site, and for any materials or resources needed to continue the project. If there is extra after those 
 											needs have been seen to, the funds will be set aside to upgrade my small drawing tablet to something more robust. This will allow me to be more mobile, and it will allow me
@@ -127,6 +127,7 @@
 						<section id="contact">
 							<!-- Social -->
 								<div class="social column">
+								<span class="image left special"><img src="images/aboutme.png" alt="" /></span>
 									<h3>About Me</h3>
 									<p>Mus sed interdum nunc dictum rutrum scelerisque erat a parturient condimentum potenti dapibus vestibulum condimentum per tristique porta. Torquent a ut consectetur a vel ullamcorper a commodo a mattis ipsum class quam sed eros vestibulum quisque a eu nulla scelerisque a elementum vestibulum.</p>
 									<p>Aliquet dolor ultricies sem rhoncus dolor ullamcorper pharetra dis condimentum ullamcorper rutrum vehicula id nisi vel aptent orci litora hendrerit penatibus erat ad sit. In a semper velit eleifend a viverra adipiscing a phasellus urna praesent parturient integer ultrices montes parturient suscipit posuere quis aenean. Parturient euismod ultricies commodo arcu elementum suspendisse id dictumst at ut vestibulum conubia quisque a himenaeos dictum proin dis purus integer mollis parturient eros scelerisque dis libero parturient magnis.</p>
@@ -141,18 +142,18 @@
 							<!-- Form -->
 								<div class="column">
 									<h3>Get in Touch</h3>
-									<form action="#" method="post">
+									<form action="contact.php" method="post">
 										<div class="field half first">
 											<label for="name">Name</label>
-											<input name="name" id="name" type="text" placeholder="Name">
+											<input name="cf_name" id="name" type="text" placeholder="Name">
 										</div>
 										<div class="field half">
 											<label for="email">Email</label>
-											<input name="email" id="email" type="email" placeholder="Email">
+											<input name="cf_email" id="email" type="email" placeholder="Email">
 										</div>
 										<div class="field">
 											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+											<textarea name="cf_message" id="message" rows="6" placeholder="Message"></textarea>
 										</div>
 										<ul class="actions">
 											<li><input value="Send Message" class="button" type="submit"></li>
