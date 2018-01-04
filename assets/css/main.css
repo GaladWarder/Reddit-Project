@@ -429,6 +429,14 @@
 			font-size: 1.35em;
 			padding: 0 2em;
 		}
+		
+		input[type="submit"].donate,
+		input[type="reset"].donate,
+		input[type="button"].donate,
+		button.donate,
+		.button.donate {
+			text-align: center;
+		}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
 		input[type="reset"].disabled,
@@ -484,6 +492,11 @@
 
 		#contact .icons {
 			margin-bottom: 1em;
+		}
+		
+		#contact .donate {
+			margin-bottom: 1em;
+			text-align: center;
 		}
 
 		#contact .column {
