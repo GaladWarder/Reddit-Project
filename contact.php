@@ -2,19 +2,36 @@
 $field_name = $_POST['name'];
 $field_email = $_POST['email'];
 $field_message = $_POST['message'];
+echo $field_message;
+echo $field_email;
+echo $field_name;
 
 $mail_to = 'galaddota@yahoo.com';
 $subject = 'Reddit Project Message from'.$field_name;
 
-$body_message = 'From: '.$field_name."\n";
-$body_message .= 'E-mail: '.$field_email."\n";
+$body_message = 'From: '.$field_name.'\n';
+$body_message .= 'E-mail: '.$field_email.'\n';
 $body_message .= 'Message: '.$field_message;
 
-$headers = 'From: '.$field_email."\r\n";
-$headers .= 'Reply-To: '.$field_email."\r\n";
-$mail_status = mail($mail_to, $subject, $body_message, $headers);
+$headers = 'From: '.$field_name.'\r\n';
+$headers .= 'Reply-To: '.$field_email.'\r\n';
+$headers .= 'X-Mailer: PHP/'.phpversion();
 
-if ($mail_status) { ?>
+if (empty($field_name) || !filter_var($field_email, FILTER_VALIDATE_EMAIL) || empty($field_message)) {
+  ?>
+    <script language="javascript" type="text/javascript">
+        alert('All fields must be correctly compiled');
+        window.location = 'index.html';
+    </script>
+<?php
+
+} else {
+
+//$mail_status = mail($mail_to, $subject, $body_message, $headers);
+//echo $mail_status;
+ini_set('sendmail_from', 'mail.theredditproject.online');
+
+if (mail($mail_to, $subject, $body_message, $headers)) { ?>
 	<script language="javascript" type="text/javascript">
 		alert('Your message has been sent - I will be in contact with you soon!');
 		window.location = 'index.html';
@@ -24,8 +41,9 @@ if ($mail_status) { ?>
 else { ?>
 	<script language="javascript" type="text/javascript">
 		alert('Message failed. Please email me directly at galaddota@yahoo.com');
-		window.location = 'index.html';
+		//window.location = 'index.html';
 	</script>
 <?php
+}
 }
 ?>
