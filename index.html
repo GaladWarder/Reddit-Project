@@ -145,18 +145,22 @@ $selectedBanner = "$banner[i]"; // set variable equal to whatever random file wa
 									<form action="contact.php" method="post">
 										<div class="field half first">
 											<label for="name">Name</label>
-											<input name="cf_name" id="name" type="text" placeholder="Name">
+											<input name="name" id="name" type="text" placeholder="Name">
 										</div>
 										<div class="field half">
 											<label for="email">Email</label>
-											<input name="cf_email" id="email" type="email" placeholder="Email">
+											<input name="email" id="email" type="email" placeholder="Email">
 										</div>
 										<div class="field">
 											<label for="message">Message</label>
-											<textarea name="cf_message" id="message" rows="6" placeholder="Message"></textarea>
+											<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+										</div>
+										<div class="field">
+											<label for="name">*What is 2+2? (Anti-spam)</label>
+											<input name="human" id="name" type="text" placeholder="2+2 is...">
 										</div>
 										<ul class="actions">
-											<li><input value="Send Message" class="button" type="submit"></li>
+											<li><input name="submit" value="Send Message" class="button" type="submit"></li>
 										</ul>
 									</form>
 								</div>
