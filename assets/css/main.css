@@ -1250,6 +1250,8 @@
 		padding: 3.5em 0 1.5em 0;
 		padding-left: 3.5em;
 		padding-right: 3.5em;
+		max-width: 92%;
+		margin: auto;
 	}
 
 		@media screen and (max-width: 980px) {
